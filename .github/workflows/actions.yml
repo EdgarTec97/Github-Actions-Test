@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: Simple JS Actions
         id: greet
-        uses: EdgarTec97/Github-Actions-Test@v1
+        uses: edgar-tec97/github-actions-test@v1
         with:
           who-to-greet: Jhon
       - name: Log Greeting Time
