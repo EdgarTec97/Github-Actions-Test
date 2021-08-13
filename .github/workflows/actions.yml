@@ -6,5 +6,10 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
+      - name: Simple JS Actions
+        id: greet2468
+        uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: Jhon Vega
       - name: Log Greeting Time
-        run: echo "hola"
+        run: echo "${{ steps.greet2468.outputs.time }}"
