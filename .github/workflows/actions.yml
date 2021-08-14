@@ -6,7 +6,7 @@ on:
     - cron: "0/6 * * * *"
   #push:
   pull_request:
-    types: [closed, assigned, opened, reopened]
+    types: [closed, assigned, opened, reopened, ready_for_review]
 
 jobs:
   run-github-actions:
