@@ -1,13 +1,25 @@
 name: Actions Worflow
 
 on:
-  repository_dispatch:
-    types: [build]
+  #repository_dispatch:
+  #  types: [build]
   #schedule:
   #- cron: "0-59 * * * *"
-  #push:
-  pull_request:
-    types: [closed, assigned, opened, reopened]
+  push:
+    branches:
+      - master
+      - "feature/*"
+      - "feature/**"
+      - "-!feature/featC"
+    tags:
+      - v1.*
+    paths:
+      - "**.js"
+      - "!filename.js"
+    #paths-ignore:
+    #  - "docs/**"
+  #pull_request:
+  #  types: [closed, assigned, opened, reopened]
 
 jobs:
   run-github-actions:
