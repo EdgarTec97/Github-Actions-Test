@@ -2,11 +2,11 @@ name: Actions Worflow
 
 on:
   schedule:
-    - cron: "0/5 * * * *"
-    - cron: "0/6 * * * *"
+    - cron: "0/1 * * * *"
+    - cron: "0/2 * * * *"
   #push:
   pull_request:
-    types: [closed, assigned, opened, reopened, ready_for_review]
+    types: [closed, assigned, opened, reopened]
 
 jobs:
   run-github-actions:
