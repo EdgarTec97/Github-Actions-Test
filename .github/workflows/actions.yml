@@ -13,9 +13,9 @@ on:
       - "-!feature/featC"
     tags:
       - v1.*
-    paths:
-      - "**.js"
-      - "!filename.js"
+    #paths:
+    # - "**.js"
+    #- "!filename.js"
     #paths-ignore:
     #  - "docs/**"
   #pull_request:
