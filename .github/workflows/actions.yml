@@ -2,7 +2,7 @@ name: Actions Worflow
 
 on:
   schedule:
-    - cron: "0/1 * * * *"
+    - cron: "0-59 * * * *"
   #push:
   pull_request:
     types: [closed, assigned, opened, reopened]
