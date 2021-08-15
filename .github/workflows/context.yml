@@ -1,6 +1,6 @@
 name: Context
 
-on: push
+on: [push, pull_request]
 
 jobs:
   functions:
@@ -8,12 +8,13 @@ jobs:
     steps:
       - name: dump
         run: |
-          echo ${{ contains(  'hello','11') }} 
+          echo ${{ contains(  'hello','55') }} 
           echo ${{ startsWith('hello','he') }} 
           echo ${{ endsWith(  'hello','lo') }} 
           echo ${{ format(    'hello {0} {1} {2}','World','!','!') }}
   context:
     runs-on: ubuntu-20.04
+    if: github.event_name == 'push'
     steps:
       - name: Dump GitHub context
         env:
