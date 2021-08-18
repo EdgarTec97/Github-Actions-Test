@@ -10,7 +10,7 @@ jobs:
         image: edgarcv99/simple-docker-nodejs-app:0.0.1
         ports:
           - 3000:3000
-      mongo:
+      mongodb:
         image: mongo
         ports:
           - 27017:27017
