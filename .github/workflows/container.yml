@@ -3,6 +3,23 @@ name: Container
 on: push
 
 jobs:
+  docker-steps:
+    runs-on: ubuntu-20.04
+    container:
+      image: node:lts-alpine
+    steps:
+      - name: Log node version
+        run: node -v
+      - name: Step with docker
+        uses: docker://node:14-alpine3.14
+        with:
+          entrypoint: "/bin/echo"
+          args: '["Hello World"]'
+      - name: Step with docker Log node version
+        uses: docker://node:14-alpine3.14
+        with:
+          entrypoint: "/usr/local/bin/node"
+          args: -v
   node-docker:
     runs-on: ubuntu-20.04
     services:
