@@ -5,9 +5,18 @@ on: push
 jobs:
   node-docker:
     runs-on: ubuntu-20.04
-    container: node:lts
+    services:
+      app:
+        image: edgarcv99/simple-docker-nodejs-app:0.0.1
+        ports:
+          - 3000:3000
+      mongodb:
+        image: mongo
+        ports:
+          - 27017:27017
     steps:
-      - name: Log node version
+      - name: Post a user
         run: |
-          node -v
-          cat /etc/os-release
+          curl -X POST http://localhost:3000/api/user -H 'Content-Type: application/json'  -d  '{"username": "Edgar Vega", "address": "Framboyanes" }'
+      - name: Get Users
+        run: curl http://localhost:3000/api/users
